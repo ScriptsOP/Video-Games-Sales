@@ -1,14 +1,19 @@
 
 package gui;
 
+import bl.TableModel;
+import bl.TableRenderer;
 import bl.VideoGame;
 
 public class GUI extends javax.swing.JFrame {
 
     private VideoGame vg = new VideoGame();
+    private TableModel model;
     
     public GUI() {
         initComponents();
+        tableVideoGames.setModel(model);
+        tableVideoGames.setDefaultRenderer(Object.class, new TableRenderer());
     }
 
     @SuppressWarnings("unchecked")
