@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/johan/Documents/Schule/POS/NetBeansProjects/video%20games%20sales/Video-Games-Sales/src/data/Video_Games_Sales_as_at_22_Dec_2016.csv</file>
-            <file>file:/C:/Users/johan/Documents/Schule/POS/NetBeansProjects/video%20games%20sales/Video-Games-Sales/src/gui/GUI.java</file>
-            <file>file:/C:/Users/johan/Documents/Schule/POS/NetBeansProjects/video%20games%20sales/Video-Games-Sales/src/bl/videogame.java</file>
+            <file>file:/C:/Users/johan/Documents/Schule/POS/NetBeansProjects/VideoGamesSales/Video%20Games%20Sales%20Program/Video-Games-Sales/src/bl/TableModel.java</file>
+            <file>file:/C:/Users/johan/Documents/Schule/POS/NetBeansProjects/VideoGamesSales/Video%20Games%20Sales%20Program/Video-Games-Sales/src/data/VideoGamesSales2016</file>
+            <file>file:/C:/Users/johan/Documents/Schule/POS/NetBeansProjects/VideoGamesSales/Video%20Games%20Sales%20Program/Video-Games-Sales/src/gui/GUI.java</file>
+            <file>file:/C:/Users/johan/Documents/Schule/POS/NetBeansProjects/VideoGamesSales/Video%20Games%20Sales%20Program/Video-Games-Sales/src/bl/TableRenderer.java</file>
+            <file>file:/C:/Users/johan/Documents/Schule/POS/NetBeansProjects/VideoGamesSales/Video%20Games%20Sales%20Program/Video-Games-Sales/src/bl/VideoGame.java</file>
         </group>
     </open-files>
 </project-private>
