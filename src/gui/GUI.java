@@ -4,11 +4,16 @@ package gui;
 import bl.TableModel;
 import bl.TableRenderer;
 import bl.VideoGame;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GUI extends javax.swing.JFrame {
 
+    private File file = new File("src\\data\\VideoGamesSales2016.csv");
     private VideoGame vg = new VideoGame();
-    private TableModel model;
+    private TableModel model = new TableModel();
     
     public GUI() {
         initComponents();
@@ -65,7 +70,12 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btStartActionPerformed
-        
+        try {
+            vg.readInCSV(file);
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(vg.getGenre());
     }//GEN-LAST:event_btStartActionPerformed
 
     public static void main(String args[]) {
