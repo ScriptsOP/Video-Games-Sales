@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class GUI extends javax.swing.JFrame {
 
@@ -40,8 +41,6 @@ public class GUI extends javax.swing.JFrame {
 
         for (int i = 0; i <= vg.getVideogames().size() - 1; i++) {
             model.add(vg.getVideogames().get(i));
-            dataBase.insertYear(vg.getYear_of_release(), 0);
-            dataBase.insertSales(vg.getName(), 0);
         }
     }
 
@@ -83,7 +82,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.1;
         getContentPane().add(jScrollPane1, gridBagConstraints);
 
-        btYearWithMostReleases.setText("Year with most releases");
+        btYearWithMostReleases.setText("Releases of Year");
         btYearWithMostReleases.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btYearWithMostReleasesActionPerformed(evt);
@@ -114,6 +113,9 @@ public class GUI extends javax.swing.JFrame {
 
     private void btYearWithMostReleasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btYearWithMostReleasesActionPerformed
         try {
+            int year = Integer.parseInt(JOptionPane.showInputDialog(this, "What year should be calculated"));
+            int sales = model.getReleasedGames(year);
+            dataBase.insertYear(year, sales);
             dataBase.getYearWithMostReleases();
         } catch (SQLException ex) {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -122,6 +124,9 @@ public class GUI extends javax.swing.JFrame {
 
     private void btGameWithMostSalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGameWithMostSalesActionPerformed
         try {
+            String game = JOptionPane.showInputDialog(this, "What game should be calculated");
+            VideoGame sales = model.getMostSoldGame();
+            dataBase.insertSales("Super Mario Bros.", vg.getVideogames().size());
             dataBase.getGameWithMostSales();
         } catch (SQLException ex) {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);

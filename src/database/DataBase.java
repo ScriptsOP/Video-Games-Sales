@@ -50,15 +50,15 @@ public class DataBase {
         PreparedStatement stat = conn.prepareStatement(sqlString);
         stat.setString(1, name);
         stat.setInt(2, anzahl);
-        stat.executeUpdate(sqlString);
+        stat.executeUpdate();
     }
     
     public void insertYear(int year, int anzahl) throws SQLException {
-        String sqlString = "INSERT INTO sales (year, anzahl) VALUES (?, ?)";
+        String sqlString = "INSERT INTO games_per_year (year, anzahl) VALUES (?, ?)";
         PreparedStatement stat = conn.prepareStatement(sqlString);
         stat.setInt(1, year);
         stat.setInt(2, anzahl);
-        stat.executeUpdate(sqlString);
+        stat.executeUpdate();
     }
     
     public void getYearWithMostReleases() throws SQLException {

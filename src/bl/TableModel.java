@@ -35,4 +35,23 @@ public class TableModel extends AbstractTableModel {
         return vg;
     }
 
+    public VideoGame getMostSoldGame() {
+        VideoGame game = vgames.get(0);
+        for (VideoGame vgame : vgames) {
+            if (vgame.getGlobal_sales() > game.getGlobal_sales()) {
+                game = vgame;
+            }
+        }
+        return game;
+    }
+    
+    public int getReleasedGames(int year) {
+        int sum = 0;
+        for (VideoGame vgame : vgames) {
+            if(vgame.getYear_of_release() == year) {
+                sum++;
+            }
+        }
+        return sum;
+    }
 }

@@ -51,7 +51,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="btYearWithMostReleases">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Year with most releases"/>
+        <Property name="text" type="java.lang.String" value="Releases of Year"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btYearWithMostReleasesActionPerformed"/>
