@@ -5,7 +5,7 @@ import javax.swing.table.AbstractTableModel;
 
 public class TableModel extends AbstractTableModel {
 
-    private static String[] colNames = {"Name", "Publisher"};
+    private static String[] colNames = {"Name", "Publisher", "Year of Release", "Genre"};
     private ArrayList<VideoGame> vgames = new ArrayList<>();
 
     public void add(VideoGame vg) {
@@ -32,13 +32,7 @@ public class TableModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIdx, int colIdx) {
         VideoGame vg = vgames.get(rowIdx);
-        switch(colIdx){
-            case 0: return "test";
-            case 1: return "test";
-            case 2: return "test";
-            case 3: return "test";
-            default: return "???";
-        }
+        return vg;
     }
 
 }
