@@ -35,6 +35,10 @@ public class TableModel extends AbstractTableModel {
         return vg;
     }
 
+    /**
+     * Runs through a for each loop to find the most sold game.
+     * @return A videogame object.
+     */
     public VideoGame getMostSoldGame() {
         VideoGame game = vgames.get(0);
         for (VideoGame vgame : vgames) {
@@ -45,6 +49,10 @@ public class TableModel extends AbstractTableModel {
         return game;
     }
     
+    /**
+     * Runs through a for each loop to find out how many games got released per year.
+     * @return The Integer sum.
+     */
     public int getReleasedGames(int year) {
         int sum = 0;
         for (VideoGame vgame : vgames) {

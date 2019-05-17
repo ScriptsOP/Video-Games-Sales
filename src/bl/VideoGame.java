@@ -45,6 +45,9 @@ public class VideoGame {
         this.global_sales = global_sales;
     }
     
+    /**
+     * Gets the data out of the CSV File and saves it in a videogame arraylist.
+     */
     public void readInCSV(File file) throws FileNotFoundException, IOException {
         br = new BufferedReader(new FileReader(file));
         br.readLine();
@@ -74,6 +77,10 @@ public class VideoGame {
         br.close();
     }
     
+    /**
+     * Calculates how many games got released per year.
+     * @return As integer the amount of games.
+     */
     public int calcGamesPerYear(int year) {
         int count = 0;
         for (VideoGame videogame : videogames) {

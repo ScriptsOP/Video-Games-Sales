@@ -95,7 +95,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weightx = 0.1;
         getContentPane().add(btYearWithMostReleases, gridBagConstraints);
 
-        btGameWithMostSales.setText("Game with most sales");
+        btGameWithMostSales.setText("Most Sold Game");
         btGameWithMostSales.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btGameWithMostSalesActionPerformed(evt);
@@ -112,6 +112,10 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btYearWithMostReleasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btYearWithMostReleasesActionPerformed
+        /**
+         * Calculates in which year most games got released
+         * after entering a year.
+         */
         try {
             int year = Integer.parseInt(JOptionPane.showInputDialog(this, "What year should be calculated"));
             int sales = model.getReleasedGames(year);
@@ -123,14 +127,19 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btYearWithMostReleasesActionPerformed
 
     private void btGameWithMostSalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGameWithMostSalesActionPerformed
-        try {
-            String game = JOptionPane.showInputDialog(this, "What game should be calculated");
-            VideoGame sales = model.getMostSoldGame();
-            dataBase.insertSales("Super Mario Bros.", vg.getVideogames().size());
-            dataBase.getGameWithMostSales();
-        } catch (SQLException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            String game = JOptionPane.showInputDialog(this, "What game should be calculated");
+//            VideoGame sales = model.getMostSoldGame();
+//            dataBase.insertSales("Super Mario Bros.", vg.getVideogames().size());
+//            dataBase.getGameWithMostSales();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        /**
+         * The JOptionPane outputs the most sold game.
+         */
+        VideoGame sales = model.getMostSoldGame();
+        JOptionPane.showMessageDialog(null, "The most sold game was " + sales.getName() + " for " + sales.getPlatform() + " and was developed by " + sales.getPublisher());
     }//GEN-LAST:event_btGameWithMostSalesActionPerformed
 
     public static void main(String args[]) {

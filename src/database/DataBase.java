@@ -14,7 +14,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author johan
+ * @author johannessulzbacher
  */
 public class DataBase {
 
@@ -45,6 +45,10 @@ public class DataBase {
         return theInstance;
     }
     
+    
+    /**
+     * It inserts the sales of a game in the database after entering a name.
+     */
     public void insertSales(String name, int anzahl) throws SQLException {
         String sqlString = "INSERT INTO sales (name, anzahl) VALUES (?, ?)";
         PreparedStatement stat = conn.prepareStatement(sqlString);
@@ -53,6 +57,9 @@ public class DataBase {
         stat.executeUpdate();
     }
     
+    /**
+     * It inserts the year and the amount of games that got released.
+     */
     public void insertYear(int year, int anzahl) throws SQLException {
         String sqlString = "INSERT INTO games_per_year (year, anzahl) VALUES (?, ?)";
         PreparedStatement stat = conn.prepareStatement(sqlString);
@@ -61,6 +68,9 @@ public class DataBase {
         stat.executeUpdate();
     }
     
+    /**
+     * Outputs the year with most releases.
+     */
     public void getYearWithMostReleases() throws SQLException {
         Statement stat = conn.createStatement();
         String sqlString = "SELECT year FROM games_per_year WHERE anzahl = (SELECT max(anzahl) from games_per_year)";
@@ -70,6 +80,9 @@ public class DataBase {
         }
     }
 
+    /**
+     * Outputs the game with the most sales.
+     */
     public void getGameWithMostSales() throws SQLException {
         Statement stat = conn.createStatement();
         String sqlString = "SELECT name FROM sales WHERE anzahl = (SELECT max(anzahl) from sales)";
@@ -79,6 +92,9 @@ public class DataBase {
         }
     }
     
+    /**
+     * A test method.
+     */
     public void listAllDepartments() throws SQLException{
         Statement stat = conn.createStatement();
         String sqlString = "SELECT * FROM sales";
